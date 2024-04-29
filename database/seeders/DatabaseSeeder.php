@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // User::create([
-        // 'username' => 'admin',
-        // 'password' => bcrypt('password'),
-        // 'password_view' => 'password'
-        // ]);
+        User::create([
+        'username' => 'admin',
+        'password' => bcrypt('password'),
+        'password_view' => 'password'
+        ]);
         
-        // Setings::create([
-        //     'opsi' => 'tutup'
-        // ]);
+        Setings::create([
+            'opsi' => 'tutup'
+        ]);
     }
 }
