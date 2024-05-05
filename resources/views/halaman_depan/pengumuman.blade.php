@@ -9,120 +9,13 @@
     <link rel="stylesheet" href="{{ asset('assets') }}/depan/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="{{ asset('assets') }}/depan/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ asset('assets/animasi/animasi.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/depan/style.css') }}">
     <style>
-        /* html,
-      body {
-        height: 100%;
-        margin: 0;
-      } */
-        /* .container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: auto;
-        margin-top: 20px;
-      } */
-        /* html {
-            height: 100%;
-            box-sizing: border-box;
-        } */
+        html,
+        body {
+            background-size: cover;
+            background-image: url('{{ asset('assets/depan/img/bg-image4.png') }}');
 
-        /* *,
-        *:before,
-        *:after {
-            box-sizing: inherit;
-        } */
-
-        /* .body-for-sticky {
-            position: relative;
-            min-height: 100%;
-            padding-bottom: 6rem;
-        }
-
-        .sticky-footer {
-            position: absolute;
-            bottom: 0;
-        } */
-
-        .container {
-            width: 90%;
-            max-width: 960px;
-            /* Batas maksimal lebar container */
-            margin: 20px auto;
-            /* Tengah secara horizontal */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .card {
-            width: 100%;
-            /* Card akan mengisi seluruh lebar container */
-            max-width: 600px;
-            /* Batas maksimal lebar card */
-            margin: 0 auto;
-            /* Tengah secara horizontal */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Menambahkan sedikit bayangan untuk estetika */
-            border-radius: 8px;
-            /* Membulatkan sudut */
-        }
-
-        .card-body {
-            padding: 20px;
-            /* Menambahkan padding di dalam card */
-        }
-
-        /* Media query untuk layar kecil (misalnya ponsel) */
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 0 5px;
-                /* Menambahkan padding kecil pada sisi container */
-            }
-
-            .card {
-                margin: 10px 0;
-                /* Mengurangi margin atas dan bawah card */
-            }
-
-            .card-body {
-                padding: 10px;
-                /* Mengurangi padding di dalam card */
-            }
-        }
-
-        .container img {
-            display: block;
-            /* Membuat gambar menjadi block level untuk memungkinkan margin */
-            width: 150px;
-            /* Membuat gambar responsif */
-            height: auto;
-            /* Menjaga aspek rasio gambar */
-            margin: 0 auto 20px;
-            /* Menambahkan margin bawah dan mengatur gambar di tengah */
-            margin-top: 20px;
-        }
-
-        .title {
-            text-align: center;
-        }
-
-        .img-nav {
-            float: left;
-            margin-right: 10px;
-            width: 60px;
-        }
-
-        .navbar {
-            background-color: darkcyan;
-        }
-
-        .font {
-            font-size: 25px;
         }
 
         .item::after {
@@ -148,12 +41,6 @@
             width: 100%;
         }
 
-        @media only screen and (max-width: 600px) {
-            .footer {
-                height: auto;
-
-            }
-        }
     </style>
 </head>
 
@@ -167,13 +54,18 @@
     @include('halaman_depan.navbar')
 
     <main>
+        @if ($setings == 'buka')
+            
+      
         @if ($ket_taruna->keterangan === 'lulus')
             <canvas id="canvas"></canvas>
-        @else
-            <canvas id="myCanvas"></canvas>
+            {{-- @else
+            <canvas id="myCanvas"></canvas> --}}
+        @endif
+
         @endif
         <div class="container">
-            <img src="{{ asset('assets') }}/depan/img/logo2.png" alt="" />
+            {{-- <img src="{{ asset('assets') }}/depan/img/logo2.png" alt="" /> --}}
             <div class="card">
                 <h6 class="card-header title bg-success">
                     <b style="color: white">Pengumuman Kelulusan</b>
@@ -189,6 +81,13 @@
         > -->
                                 <table>
                                     <tr>
+                                        <td>NAMA</td>
+                                        <td> </td>
+                                        <td>:</td>
+                                        <td> </td>
+                                        <td>{{ $dt->nama }}</td>
+                                    </tr>
+                                    <tr>
                                         <td>NISN</td>
                                         <td> </td>
                                         <td>:</td>
@@ -202,13 +101,7 @@
                                         <td> </td>
                                         <td>{{ $dt->nit }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>NAMA</td>
-                                        <td> </td>
-                                        <td>:</td>
-                                        <td> </td>
-                                        <td>{{ $dt->nama }}</td>
-                                    </tr>
+
                                     <tr>
                                         <td>KELAS</td>
                                         <td> </td>
@@ -221,12 +114,81 @@
                                         <td> </td>
                                         <td>:</td>
                                         <td> </td>
-                                        <td>{{ $dt->kompetensi_keahlian }}</td>
+                                        @switch($dt->kompetensi_keahlian)
+                                        @case('ATPH')
+                                            <td>Agribisnis Tanaman Pangan & Holtikultura</td>
+                                            @break
+                                    
+                                        @case('APHP')
+                                            <td>Agribisnis Pengolahan Hasil Pertanian</td>
+                                            @break
+                                    
+                                        @case('APAT')
+                                            <td>Agribisnis Perikanan Air Tawar</td>
+                                            @break
+                                    
+                                        @case('ATU')
+                                            <td>Agribisnis Ternak Unggas</td>
+                                            @break
+                                    
+                                        @case('NKN')
+                                            <td>Nautika Kapal Niaga</td>
+                                            @break
+                                    
+                                        @case('TKN')
+                                            <td>Teknika kapal Niaga</td>
+                                            @break
+                                    
+                                        @case('NKPI')
+                                            <td>Nautika Kapal Penangkap Ikan</td>
+                                            @break
+                                    
+                                        @case('TBSM')
+                                            <td>Teknik Bisnis Sepeda Motor</td>
+                                            @break
+                                    
+                                        @case('TPM')
+                                            <td>Teknik Pemesinan</td>
+                                            @break
+                                    
+                                        @case('TAB')
+                                            <td>Teknik Alat Berat</td>
+                                            @break
+                                    
+                                        @case('TLOG')
+                                            <td>Teknik Logistik</td>
+                                            @break
+                                    
+                                        @case('TITL')
+                                            <td>Teknik Instalasi Tenaga Listrik</td>
+                                            @break
+                                    
+                                        @case('RPL')
+                                            <td>Rekayasa Perangkat Lunak</td>
+                                            @break
+                                    
+                                        @case('TABOG')
+                                            <td>Tata Boga</td>
+                                            @break
+                                    
+                                        @case('UPW')
+                                            <td>Usaha Perjalanan Wisata</td>
+                                            @break
+                                    
+                                        @case('TABUS')
+                                            <td>Tata Busana</td>
+                                            @break
+                                    
+                                        @default
+                                            <td> - </td>
+                                    @endswitch
+                                    
                                     </tr>
                                 </table>
                             </div>
                             <div class="col-auto mt-3" style="text-align: center">
                                 @if ($dt->keterangan == 'lulus')
+                                    <p><b>Selamat Anda Di Nyatakan </b></p>
                                     <button class="btn btn-success"><b>LULUS</b></button>
                                 @else
                                     <button class="btn btn-danger"><b>TIDAK LULUS <i
@@ -235,7 +197,7 @@
                                 @endif
                             </div>
                             @if ($dt->keterangan == 'lulus')
-                                <p class="mt-3"><b>*SKL bisa di ambil di sekolah</b></p><br>
+                                <p class="mt-3"><b>*Pengambilan SKL Bisa Menghubungi Wali Kelas</b></p><br>
                             @endif
                         @endforeach
                     @else

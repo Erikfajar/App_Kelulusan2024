@@ -9,107 +9,20 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/icon/css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('assets') }}/depan/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="{{ asset('assets') }}/depan/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/depan/style.css') }}">
     <style>
-        /* html,
-      body {
-        height: 100%;
-        margin: 0;
-      } */
-        /* .container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: auto;
-        margin-top: 20px;
-      } */
 
-        .container {
-            width: 90%;
-            max-width: 960px;
-            /* min-height: calc(100vh - 55px); 55px adalah tinggi footer */
-            /* Batas maksimal lebar container */
-            margin: 20px auto;
-            /* Tengah secara horizontal */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        html,
+        body {
+            background-size: cover;
+            background-image: url('{{ asset('assets/depan/img/bg-image4.png') }}');
+            
         }
-
-        .card {
-            width: 100%;
-            /* Card akan mengisi seluruh lebar container */
-            max-width: 600px;
-            /* Batas maksimal lebar card */
-            margin: 0 auto;
-            /* Tengah secara horizontal */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Menambahkan sedikit bayangan untuk estetika */
-            border-radius: 8px;
-            /* Membulatkan sudut */
-        }
-
-        .card-body {
-            padding: 20px;
-            /* Menambahkan padding di dalam card */
-        }
-
-        /* Media query untuk layar kecil (misalnya ponsel) */
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 0 5px;
-                /* Menambahkan padding kecil pada sisi container */
-            }
-
-            .card {
-                margin: 10px 0;
-                /* Mengurangi margin atas dan bawah card */
-            }
-
-            .card-body {
-                padding: 10px;
-                /* Mengurangi padding di dalam card */
-            }
-        }
-
-        .container img {
-            display: block;
-            /* Membuat gambar menjadi block level untuk memungkinkan margin */
-            width: 150px;
-            /* Membuat gambar responsif */
-            height: auto;
-            /* Menjaga aspek rasio gambar */
-            margin: 0 auto 20px;
-            /* Menambahkan margin bawah dan mengatur gambar di tengah */
-            margin-top: 20px;
-        }
-
-        .title {
-            text-align: center;
-        }
-
-        .img-nav {
-            float: left;
-            margin-right: 10px;
-            width: 60px;
-        }
-
-        .navbar {
-            background-color: darkcyan;
-        }
-
-        .font {
-            font-size: 25px;
-        }
-
         .footer {
             position: relative;
             margin-top: auto;
-                /* position: fixed; */
-                bottom: 0;
+            /* position: fixed; */
+            bottom: 0;
             color: #707070;
             height: 2em;
             left: 0;
@@ -118,12 +31,6 @@
 
         }
 
-        @media only screen and (max-width: 600px) {
-            .footer {
-                height: auto;
-                /* Mengatur tinggi footer agar bisa menyesuaikan konten */
-            }
-        }
     </style>
 </head>
 
@@ -135,9 +42,10 @@
     </div> -->
 
     @include('halaman_depan.navbar')
-    <main>
+    {{-- <img clas src="{{ asset('assets/depan/img/gerbangsmk2.jpg') }}" alt=""> --}}
+    <main class="bg">
         <div class="container">
-            <img src="{{ asset('assets') }}/depan/img/logo2.png" alt="" />
+            {{-- <img src="{{ asset('assets') }}/depan/img/logo2.png" alt="" /> --}}
             <div class="card">
                 <h6 class="card-header title bg-success">
                     <b style="color: white">Pengumuman Kelulusan</b>
@@ -154,14 +62,15 @@
                                 <!-- <label class="visually-hidden" for="autoSizingInputGroup"
                 >Username</label
               > -->
+                                <p>Silahkan masukan NIT Anda</p>
                                 <div class="input-group">
-                                    <div class="input-group-text">Search</div>
+                                    <div class="input-group-text">NIT</div>
                                     <input type="text" name="search" id="nit" class="form-control"
                                         placeholder="Masukan NIT Anda">
                                 </div>
                             </div>
                             <div class="col-auto mt-3">
-                                <button type="submit" class="btn btn-outline-primary">Search <i
+                                <button type="submit" class="btn btn-outline-primary">Cari <i
                                         class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </form>

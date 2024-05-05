@@ -36,7 +36,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     // ROUTE DATA TARUNA ----------------------------------------
     Route::resource('/data_taruna', DataTarunaController::class);
+    Route::get('/delete_all',[DataTarunaController::class,'delete_all'])->name('delete_all');
     Route::post('/data_taruna/import', [DataTarunaController::class, 'import'])->name('data_taruna.import');
+    Route::get('/export', [DataTarunaController::class, 'export'])->name('data_taruna.export');
 
     // ROUTE SETINGS
     Route::get('/setings', [SetingsController::class, 'index'])->name('setings.index');

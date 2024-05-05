@@ -14,6 +14,8 @@
             <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modal_import">
                 Import Excel
             </button>
+            <a href="{{ route('data_taruna.export') }}" class="btn btn-sm btn-secondary">Export Excel</a>
+            <a href="{{ route('delete_all') }}" class="btn btn-sm btn-danger">Delete All</a>
 
             {{-- <a href="" class="btn btn-sm btn-success">Export Excel</a> --}}
         </div>

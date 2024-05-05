@@ -29,8 +29,32 @@
                             </div>
                             <div class="col mb-0">
                                 <label for="4" class="form-label">Kelas</label>
-                                <input disabled name="kelas" value="12" type="text" id="4"
-                                    class="form-control" placeholder="Masukan Kelas" />
+                                <select name="kelas" id="defaultSelect" class="form-select">
+                                    <option selected disabled>== Pilih Kelas ==</option>
+                                   <option value="XII APAT">XII APAT</option>
+                                   <option value="XII APHP">XII APHP</option>
+                                   <option value="XII ATPH A">XII ATPH A</option>
+                                   <option value="XII ATPH B">XII ATPH B</option>
+                                   <option value="XII ATU">XII ATU</option>
+                                   <option value="XII NKN A">XII NKN A</option>
+                                   <option value="XII NKN B">XII NKN B</option>
+                                   <option value="XII NKPI">XII NKPI</option>
+                                   <option value="XII RPL">XII RPL</option>
+                                   <option value="XII TAB A">XII TAB A</option>
+                                   <option value="XII TAB B">XII TAB B</option>
+                                   <option value="XII TABOG">XII TABOG</option>
+                                   <option value="XII TABUS">XII TABUS</option>
+                                   <option value="XII TBSM A">XII TBSM A</option>
+                                   <option value="XII TBSM B">XII TBSM B</option>
+                                   <option value="XII TITL">XII TITL</option>
+                                   <option value="XII TKN">XII TKN</option>
+                                   <option value="XII TLOG A">XII TLOG A</option>
+                                   <option value="XII TLOG B">XII TLOG B</option>
+                                   <option value="XII TPM A">XII TPM A</option>
+                                   <option value="XII TPM B">XII TPM B</option>
+                                   <option value="XII TPM C">XII TPM C</option>
+                                   <option value="XII UPW">XII UPW</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -48,7 +72,7 @@
                                     <option value="TBSM">TBSM</option>
                                     <option value="TPM">TPM</option>
                                     <option value="TAB">TAB</option>
-                                    <option value="T.LOG">T.LOG</option>
+                                    <option value="TLOG">TLOG</option>
                                     <option value="TITL">TITL</option>
                                     <option value="RPL">RPL</option>
                                     <option value="TABOG">TABOG</option>

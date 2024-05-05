@@ -15,8 +15,8 @@
                         <select name="opsi" id="largeSelect" class="form-select form-select-lg">
                             <option selected value="{{ $setings->opsi }}">Di {{ $setings->opsi }}</option>
                             <option disabled>== Pilih Setingan Website ==</option>
-                            <option value="buka">Di Buka</option>
-                            <option value="tutup">Di Tutup</option>
+                            <option value="buka">DiBuka</option>
+                            <option value="tutup">DiTutup</option>
                         </select>
                     </div>
                     <div class="mt-2 mb-3">

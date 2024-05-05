@@ -10,7 +10,7 @@ html, body {
   position: absolute; /* Mengatur posisi canvas secara absolut */
   top: 0;
   left: 0;
-  z-index: -1; /* Menempatkan canvas di bawah elemen lain */
+  z-index: 0; /* Menempatkan canvas di bawah elemen lain */
   background-color: transparent; /* Membuat canvas transparan */
   width: 100%;
 }

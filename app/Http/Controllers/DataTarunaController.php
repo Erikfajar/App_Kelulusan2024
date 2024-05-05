@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Models\DataTaruna;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\DataTarunaExportView;
 use App\Imports\ImportDataTarunaClass;
 
 class DataTarunaController extends Controller
@@ -49,7 +50,7 @@ class DataTarunaController extends Controller
             'nama' => 'required|max:50',
             'nisn' => 'required|max:15',
             'nit' => 'required|max:7',
-            // 'kelas' => 'required',
+            'kelas' => 'required',
             'kompetensi_keahlian' => 'required|max:50',
             'keterangan' => 'required',
         ]);
@@ -60,7 +61,7 @@ class DataTarunaController extends Controller
             'nisn' => $request->nisn,
             'nit' => $request->nit,
             'kompetensi_keahlian' => $request->kompetensi_keahlian,
-            'kelas' => 12,
+            'kelas' => $request->kelas,
             'keterangan' => $request->keterangan,
             'created_at' => Carbon::now(),
             // 'updated_at' => Carbon::now(),
@@ -113,7 +114,7 @@ class DataTarunaController extends Controller
             'nama' => 'required|max:50',
             'nisn' => 'required|max:15',
             'nit' => 'required|max:7',
-            // 'kelas' => 'required',
+            'kelas' => 'required',
             'kompetensi_keahlian' => 'required|max:50',
             'keterangan' => 'required',
         ]);
@@ -124,7 +125,7 @@ class DataTarunaController extends Controller
             'nisn' => $request->nisn,
             'nit' => $request->nit,
             'kompetensi_keahlian' => $request->kompetensi_keahlian,
-            'kelas' => 12,
+            'kelas' => $request->kelas,
             'keterangan' => $request->keterangan,
             // 'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -156,6 +157,34 @@ class DataTarunaController extends Controller
             return redirect()->back()->with('error', 'Terjadi Kesalahan');
         }
     }
+
+  
+    public function delete_all()
+    {
+        try {
+            DataTaruna::truncate();
+            return redirect()->route('data_taruna.index')->with('success', 'Semua Data Taruna Berhasil Dihapus');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi Kesalahan');
+        }
+    }
+
+     // EXPORT EXCEL
+     public function export(Request $request)
+     {
+         // MEMANGGIL DATA 
+         $data = DataTaruna::orderBy('nama','asc');
+         $data = $data->get(); // MENGAMBIL DATA YANG SUDAH DI PANGGIL
+ 
+         // Pass parameters to the export class
+         $export = new DataTarunaExportView($data);
+         
+         // SET FILE NAME
+         $filename = date('YmdHis') . '_data_Taruna';// MENGATUR NAMA FILE
+         
+         // Download the Excel file
+         return Excel::download($export, $filename . '.xlsx');// PROSES DOWNLOAD FILE
+     }
 
     //PROSES IMPORT DATA
     public function import(Request $request)
