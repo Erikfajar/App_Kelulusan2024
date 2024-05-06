@@ -53,7 +53,6 @@ class DataTarunaController extends Controller
             'kelas' => 'required',
             'kompetensi_keahlian' => 'required|max:50',
             'keterangan' => 'required',
-            'catatan' => 'required|max:255',
         ]);
 
         #MENAMPUNG SEMUA DATA YG MASUK
@@ -64,7 +63,6 @@ class DataTarunaController extends Controller
             'kompetensi_keahlian' => $request->kompetensi_keahlian,
             'kelas' => $request->kelas,
             'keterangan' => $request->keterangan,
-            'catatan' => $request->catatan,
             'created_at' => Carbon::now(),
             // 'updated_at' => Carbon::now(),
         ];
@@ -119,7 +117,6 @@ class DataTarunaController extends Controller
             'kelas' => 'required',
             'kompetensi_keahlian' => 'required|max:50',
             'keterangan' => 'required',
-            'catatan' => 'required|max:255',
         ]);
 
         #PROSES MENAMPUNG SEMUA DATA YANG MASUK
@@ -130,7 +127,6 @@ class DataTarunaController extends Controller
             'kompetensi_keahlian' => $request->kompetensi_keahlian,
             'kelas' => $request->kelas,
             'keterangan' => $request->keterangan,
-            'catatan' => $request->catatan,
             // 'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

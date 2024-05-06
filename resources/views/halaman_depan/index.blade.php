@@ -123,7 +123,7 @@
                     hours = hours % 24;
                 }
 
-                var formattedTime = days + ' hari ' + hours + ':' + minutes + ':' + seconds;
+                var formattedTime = days + ':' + hours + ':' + minutes + ':' + seconds;
                 document.getElementById('liveTime').textContent = formattedTime;
             }
 

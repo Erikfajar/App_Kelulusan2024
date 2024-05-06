@@ -34,7 +34,6 @@
                             <th>KELAS</th>
                             <th>JURUSAN</th>
                             <th>KETERANGAN</th>
-                            <th style="width: 200px">CATATAN</th>
                             <th style="width: 100px;">ACTIONS</th>
                         </tr>
                     </thead>
@@ -49,12 +48,11 @@
                                 <td>{{ $dt->kompetensi_keahlian }}</td>
                                 <td>
                                     @if ($dt->keterangan == 'lulus')
-                                    <span class="badge bg-label-success">{{ $dt->keterangan }}</span>
+                                        <span class="badge bg-label-success">{{ $dt->keterangan }}</span>
                                     @else
-                                    <span class="badge bg-label-danger">{{ $dt->keterangan }}</span>
+                                        <span class="badge bg-label-danger">{{ $dt->keterangan }}</span>
                                     @endif
                                 </td>
-                                <td>{{ $dt->catatan?? '-' }}</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                         data-bs-target="#basicModal{{ $dt->id }}">
