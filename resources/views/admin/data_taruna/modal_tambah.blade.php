@@ -88,8 +88,13 @@
                                     <option selected disabled>== Pilih Keterangan Taruna ==</option>
                                     <option value="lulus">lulus</option>
                                     <option value="tidak lulus">tidak lulus</option>
-                                    <option value="catatan">Silahkan Menghubungi Program Keahlian</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="defaultSelect" class="form-label">Catatan</label>
+                                <textarea name="catatan" id="catatan" class="form-control" rows="3" placeholder="Masukan Catatan">{{ old('catatan') }}</textarea>
                             </div>
                         </div>
                 </div>

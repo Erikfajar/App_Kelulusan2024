@@ -56,6 +56,7 @@ class ImportDataTarunaClass implements ToCollection, WithCalculatedFormulas
                 $kelas=isset($row[4])?($row[4]):'';
                 $kompetensi_keahlian=isset($row[5])?($row[5]):'';
                 $keterangan=isset($row[6])?($row[6]):'';
+                $catatan=isset($row[7])?($row[7]):'';
                 // $alamat=isset($row[6])?($row[6]):'';
                 // $verifikasi=isset($row[4])?($row[4]):'';
       
@@ -66,6 +67,7 @@ class ImportDataTarunaClass implements ToCollection, WithCalculatedFormulas
                 $trDt[$idx]['kelas'] = $kelas;
                 $trDt[$idx]['kompetensi_keahlian'] = $kompetensi_keahlian;
                 $trDt[$idx]['keterangan'] = $keterangan;
+                $trDt[$idx]['catatan'] = $catatan;
                 // $trDt[$idx]['verifikasi'] = $verifikasi;
 
 
@@ -77,6 +79,7 @@ class ImportDataTarunaClass implements ToCollection, WithCalculatedFormulas
                     $data->kelas         = $trDt[$idx]['kelas'];
                     $data->kompetensi_keahlian         = $trDt[$idx]['kompetensi_keahlian'];
                     $data->keterangan         = $trDt[$idx]['keterangan'];
+                    $data->catatan         = $trDt[$idx]['catatan'];
                     // $data->verifikasi         = $trDt[$idx]['verifikasi'];
 
                     // SAVE THE DATA
@@ -93,6 +96,7 @@ class ImportDataTarunaClass implements ToCollection, WithCalculatedFormulas
                         $data->kelas         = $trDt[$idx]['kelas'];
                         $data->kompetensi_keahlian         = $trDt[$idx]['kompetensi_keahlian'];
                         $data->keterangan         = $trDt[$idx]['keterangan'];
+                        $data->catatan         = $trDt[$idx]['catatan'];
                         // $data->verifikasi         = $trDt[$idx]['verifikasi'];
                         // dd($data);
                         // SAVE THE DATA

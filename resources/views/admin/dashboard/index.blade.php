@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-6 col-xl-4">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-start justify-content-between">
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-6 col-xl-4">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-start justify-content-between">
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-6 col-xl-4">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-start justify-content-between">
@@ -86,27 +86,6 @@
                         </div>
                         <div class="avatar">
                             <span class="avatar-initial rounded bg-label-danger">
-                                <i class="bx bx-group bx-sm"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-xl-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex align-items-start justify-content-between">
-                        <div class="content-left">
-                            <span>Jumlah Taruna Catatan</span>
-                            <div class="d-flex align-items-end mt-2">
-                                <h4 class="mb-0 me-2">{{ $taruna_catatan }}</h4>
-                                {{-- <small class="text-danger">(-14%)</small> --}}
-                            </div>
-                            <p class="mb-0">Angkatan Tahun 2020/2021</p>
-                        </div>
-                        <div class="avatar">
-                            <span class="avatar-initial rounded bg-label-warning">
                                 <i class="bx bx-group bx-sm"></i>
                             </span>
                         </div>

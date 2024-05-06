@@ -8,6 +8,7 @@
       <th style="font-weight:bold;text-align:center;background:#f4f4f4;border:1px solid #000000;">Kelas</th> <!-- kolom E -->
       <th style="font-weight:bold;text-align:center;background:#f4f4f4;border:1px solid #000000;">Kompetensi Keahlian</th> <!-- kolom F -->
       <th style="font-weight:bold;text-align:center;background:#f4f4f4;border:1px solid #000000;">Keterangan</th> <!-- kolom F -->
+      <th style="font-weight:bold;text-align:center;background:#f4f4f4;border:1px solid #000000;">Catatan</th> <!-- kolom F -->
   </tr>
   </thead>
   <tbody>
@@ -22,6 +23,7 @@
       <td>{{ $dt->kelas ?? '' }}</td>
       <td>{{ $dt->kompetensi_keahlian ?? '' }}</td>
       <td>{{ $dt->keterangan ?? '' }}</td>
+      <td>{{ $dt->catatan ?? '' }}</td>
   </tr>
   @endforeach
   @endif
