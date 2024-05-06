@@ -88,6 +88,7 @@
                                     <option selected disabled>== Pilih Keterangan Taruna ==</option>
                                     <option value="lulus">lulus</option>
                                     <option value="tidak lulus">tidak lulus</option>
+                                    <option value="catatan">Silahkan Menghubungi Program Keahlian</option>
                                 </select>
                             </div>
                         </div>

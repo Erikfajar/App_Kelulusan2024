@@ -190,6 +190,9 @@
                                 @if ($dt->keterangan == 'lulus')
                                     <p><b>Selamat Anda Di Nyatakan </b></p>
                                     <button class="btn btn-success"><b>LULUS</b></button>
+                                @elseif ($dt->keterangan == 'catatan')
+                                    <button class="btn btn-warning"> Silahkan Menghubungi Program Keahlian</button>
+                                    <p>Dimohon untuk segera menghubungi Ketua Program Keahlian atau Wali Kelasnya</p>
                                 @else
                                     <button class="btn btn-danger"><b>TIDAK LULUS <i
                                                 class="fa-regular fa-face-sad-cry"></i></b></button>

@@ -49,6 +49,9 @@
                                 <td>
                                     @if ($dt->keterangan == 'lulus')
                                         <span class="badge bg-label-success">{{ $dt->keterangan }}</span>
+                                        @elseif ($dt->keterangan == 'catatan')
+                                        <span class="badge bg-label-warning">{{ $dt->keterangan }}</span>
+                                        
                                     @else
                                         <span class="badge bg-label-danger">{{ $dt->keterangan }}</span>
                                     @endif

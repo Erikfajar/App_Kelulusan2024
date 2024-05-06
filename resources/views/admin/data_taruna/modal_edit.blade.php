@@ -93,6 +93,7 @@
                                     <option disabled>== Pilih Keterangan Taruna ==</option>
                                     <option value="lulus">lulus</option>
                                     <option value="tidak lulus">tidak lulus</option>
+                                    <option value="catatan">catatan</option>
                                 </select>
                             </div>
                         </div>
