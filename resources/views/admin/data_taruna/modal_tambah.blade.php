@@ -91,6 +91,12 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="defaultSelect" class="form-label">Catatan</label>
+                                <textarea name="catatan" id="catatan" class="form-control" rows="3" placeholder="Masukan Catatan">{{ old('catatan') }}</textarea>
+                            </div>
+                        </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">

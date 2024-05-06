@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('kelas', 10);
             $table->string('kompetensi_keahlian', 50);
             $table->enum('keterangan', ['lulus', 'tidak lulus']);
+            $table->string('catatan')->nullable();
             $table->timestamps();
         });
     }

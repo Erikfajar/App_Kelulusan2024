@@ -190,6 +190,10 @@
                                 @if ($dt->keterangan == 'lulus')
                                     <p><b>Selamat Anda Di Nyatakan </b></p>
                                     <button class="btn btn-success"><b>LULUS</b></button>
+                                    @if ($dt->catatan)
+                                        
+                                    <p><b>Note : </b> {{ $dt->catatan }}</p>
+                                    @endif
                                 @else
                                     <button class="btn btn-danger"><b>TIDAK LULUS <i
                                                 class="fa-regular fa-face-sad-cry"></i></b></button>
